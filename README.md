@@ -1,4 +1,4 @@
-# Showing off different animals with horns
+# Showing off different animals with horns and some information about them!
 
 This project was bootstrapped with Create React App.
 
