@@ -16,10 +16,6 @@
 	padding-right: 0px;
 }
 
-.main:hover {
-	filter: grayscale(0.5);
-}
-
 .beastsdisplay {
 	width: 100%;
 	display: flex;
@@ -34,10 +30,11 @@
 	width: 25%;
 	height: 40%;
 	margin: 0.5em;
+	transition: 0.8s;
 }
 
 .beast:hover {
-	filter: brightness(0.9);
+	filter: brightness(0.8);
 }
 
 .card-body {
@@ -72,4 +69,13 @@
 
 .invisible {
 	opacity: 0;
+}
+
+.inteactionbuttons {
+	margin-left: 3em;
+	display: flex;
+}
+
+.inteactionbuttons button {
+	margin: 1em;
 }
