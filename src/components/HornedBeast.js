@@ -27,6 +27,7 @@ class HornedBeast extends React.Component {
 						src={this.props.beast.image_url}
 						alt={`${this.props.beast.keyword}`}
 						title={this.props.beast.keyword}
+						height={'50%'}
 					/>
 					<Card.Body>
 						<Card.Title>{this.props.beast.title}</Card.Title>
