@@ -1,11 +1,13 @@
 import React from 'react'
 
+import Container from 'react-bootstrap/Container'
+
 class Header extends React.Component {
 	render() {
 		return (
-			<div className='header'>
-				<h1>Horned Beasts and where to find them!</h1>
-			</div>
+			<Container fluid className='header'>
+				<h1>Horned Beasts - Mythical and more!</h1>
+			</Container>
 		)
 	}
 }

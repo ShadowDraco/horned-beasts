@@ -1,28 +1,63 @@
 import React from 'react'
+
 import HornedBeast from './HornedBeast'
-import StretchGoal from './StretchGoal'
+
+import Image from 'react-bootstrap/Image'
+import Container from 'react-bootstrap/Container'
+import Button from 'react-bootstrap/Button'
 
 class Main extends React.Component {
+	constructor(props) {
+		super(props)
+
+		this.state = { theme: true, filter: false }
+	}
+
+	changeTheme = () => {
+		this.setState({ theme: !this.state.theme })
+	}
+
+	changeFilter = () => {
+		this.setState({ filter: !this.state.filter })
+	}
+
+	filterBeasts = beasts => {
+		if (!this.state.filter) return this.props.beasts
+		let sorted = []
+		this.props.beasts.forEach(beast => {
+			sorted.push(beast)
+		})
+		return sorted.sort((a, b) => b.horns - a.horns)
+	}
+
 	render() {
 		return (
-			<div className='main'>
-				<HornedBeast
-					title='Moose'
-					url='https://cdn.britannica.com/57/92857-050-8D5A0A8E/bull-moose-water.jpg'
-					description='Moose are very large and strong animals that reside in green forest areas!'
-				/>
-				<HornedBeast
-					title='Bull'
-					url='https://i0.wp.com/bitcoinist.com/wp-content/uploads/2018/05/shutterstock_600671159-bull.jpg?zoom=2'
-					description='Bulls are found in grassy plains. They are huge, muscular, and temperamental.'
-				/>
+			<Container fluid className='main'>
+				<div className='inteactionbuttons'>
+					<Button onClick={this.changeTheme}>Change Theme!</Button>
+					<Button onClick={this.changeFilter}>Sort!</Button>
+				</div>
 
-				{this.props.StretchGoal
-					? this.props.StretchGoal.map(beast => {
-							return <StretchGoal beast={beast} key={beast._id} />
-					  })
-					: ''}
-			</div>
+				<div className='beastsdisplay'>
+					{this.state.theme
+						? this.filterBeasts().map((beast, i) => {
+								return <HornedBeast key={i} beast={beast} />
+						  })
+						: this.props.beasts.map((beast, i) => {
+								return (
+									<Image
+										key={i}
+										src={beast.image_url}
+										alt={`${beast.keyword}`}
+										title={beast.keyword}
+										fluid
+										width={'33%'}
+										rounded
+									/>
+								)
+						  })}
+				</div>
+			</Container>
 		)
 	}
 }

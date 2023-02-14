@@ -1,38 +1,81 @@
 .App {
-  text-align: center;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	background: firebrick;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.beastsdisplay {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.beast {
+	min-width: 20%;
+	width: 25%;
+	height: 40%;
+	margin: 0.5em;
+	transition: 0.8s;
 }
 
-.App-link {
-  color: #61dafb;
+.beast:hover {
+	filter: brightness(0.8);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.header {
+	padding: 2em;
+	text-align: center;
+	width: 100%;
+}
+
+.favorite-heart {
+	float: right;
+}
+
+.footer {
+	text-align: center;
+	padding-top: 5em;
+}
+
+.footer:hover {
+	filter: brightness(50%);
+}
+
+.footer:hover::before {
+	content: 'Remove footer?';
+	float: left;
+}
+
+.invisible {
+	opacity: 0;
+}
+
+.inteactionbuttons {
+	margin-left: 3em;
+	display: flex;
+}
+
+.inteactionbuttons button {
+	margin: 1em;
 }
