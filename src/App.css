@@ -58,4 +58,18 @@
 
 .footer {
 	text-align: center;
+	padding-top: 5em;
+}
+
+.footer:hover {
+	filter: brightness(50%);
+}
+
+.footer:hover::before {
+	content: 'Remove footer?';
+	float: left;
+}
+
+.invisible {
+	opacity: 0;
 }

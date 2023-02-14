@@ -31,11 +31,12 @@ class Main extends React.Component {
 						: this.props.beasts.map((beast, i) => {
 								return (
 									<Image
+										key={i}
 										src={beast.image_url}
 										alt={`${beast.keyword}`}
 										title={beast.keyword}
 										fluid
-										width={'25%'}
+										width={'33%'}
 										rounded
 									/>
 								)
