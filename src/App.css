@@ -43,6 +43,13 @@
 	transition: 0.8s;
 }
 
+.modal-body-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .beast-image img {
 	width: 100%;
 	height: 100%;

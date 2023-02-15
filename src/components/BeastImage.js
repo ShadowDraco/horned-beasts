@@ -10,8 +10,6 @@ class BeastImage extends React.Component {
 	}
 
 	changeModalActive = () => {
-		console.log('change modal active')
-
 		!this.modalActive
 			? this.props.displayModal(this.props.beast)
 			: this.props.removeModal()

@@ -5,7 +5,8 @@ import BeastImage from './BeastImage'
 
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
+
+import SelectedBeast from './SelectedBeast'
 
 class Main extends React.Component {
 	constructor(props) {
@@ -30,8 +31,6 @@ class Main extends React.Component {
 
 	displayModal = beastProp => {
 		console.log('display modal')
-		console.log(beastProp)
-		console.log(this.state.modalInfo)
 		this.setState({ modalInfo: beastProp })
 	}
 
@@ -52,7 +51,15 @@ class Main extends React.Component {
 					<Button onClick={this.changeFilter}>Sort!</Button>
 				</Container>
 
-				{this.state.modalInfo ? console.log('modal info is there') : ''}
+				{this.state.modalInfo ? (
+					<SelectedBeast
+						beast={this.state.modalInfo}
+						show={this.state.modalInfo ? true : false}
+						removeModal={this.removeModal}
+					/>
+				) : (
+					''
+				)}
 
 				<Container fluid className='beasts-display'>
 					{this.state.theme
