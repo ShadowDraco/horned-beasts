@@ -1,16 +1,17 @@
 import React from 'react'
 
 import HornedBeast from './HornedBeast'
+import BeastImage from './BeastImage'
 
-import Image from 'react-bootstrap/Image'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
 
 class Main extends React.Component {
 	constructor(props) {
 		super(props)
 
-		this.state = { theme: true, filter: false }
+		this.state = { theme: true, filter: false, modalInfo: null }
 	}
 
 	changeTheme = () => {
@@ -21,7 +22,20 @@ class Main extends React.Component {
 		this.setState({ filter: !this.state.filter })
 	}
 
-	filterBeasts = beasts => {
+	removeModal = () => {
+		console.log('remove modal')
+
+		this.setState({ modalInfo: null })
+	}
+
+	displayModal = beastProp => {
+		console.log('display modal')
+		console.log(beastProp)
+		console.log(this.state.modalInfo)
+		this.setState({ modalInfo: beastProp })
+	}
+
+	filterBeasts = () => {
 		if (!this.state.filter) return this.props.beasts
 		let sorted = []
 		this.props.beasts.forEach(beast => {
@@ -33,30 +47,28 @@ class Main extends React.Component {
 	render() {
 		return (
 			<Container fluid className='main'>
-				<div className='inteactionbuttons'>
+				<Container className='interaction-buttons'>
 					<Button onClick={this.changeTheme}>Change Theme!</Button>
 					<Button onClick={this.changeFilter}>Sort!</Button>
-				</div>
+				</Container>
 
-				<div className='beastsdisplay'>
+				{this.state.modalInfo ? console.log('modal info is there') : ''}
+
+				<Container fluid className='beasts-display'>
 					{this.state.theme
 						? this.filterBeasts().map((beast, i) => {
 								return <HornedBeast key={i} beast={beast} />
 						  })
 						: this.props.beasts.map((beast, i) => {
 								return (
-									<Image
+									<BeastImage
 										key={i}
-										src={beast.image_url}
-										alt={`${beast.keyword}`}
-										title={beast.keyword}
-										fluid
-										width={'33%'}
-										rounded
+										beast={beast}
+										displayModal={this.displayModal}
 									/>
 								)
 						  })}
-				</div>
+				</Container>
 			</Container>
 		)
 	}

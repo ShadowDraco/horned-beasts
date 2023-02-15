@@ -1,6 +1,8 @@
 # Showing off different animals with horns and some information about them
 
-# How Long?
+## Deployed on Netlify at [Fantastic Horned Beasts](https://fantastic-horned-beasts.netlify.app)
+
+### How Long Day 2?
 
 - Number and name of feature:
   - #1 Display images
@@ -72,4 +74,32 @@ I do have a question about how I could improve my method though, I ended up usin
 
 It felt really good to make the filters in css and js, and it was pretty fun to include the gallery 'theme' and card 'theme'!
 
-- I spent about 3 hours on this assignment.
+- **I spent about 3 hours on this assignment**.
+
+### How long Day 3
+
+- Number and name of feature:
+  - #1 Display modals
+- Estimate of time needed to complete:
+  - 20 minutes
+- Start time:
+  - 11:50
+- Finish time:
+  - 12:15
+- Actual time needed to complete:
+
+  - 5 minutes
+
+- Number and name of feature:
+  - #2 Add search filter
+- Estimate of time needed to complete:
+  - 20 minutes
+- Start time:
+  - 11:30
+- Finish time:
+  - 11:35
+- Actual time needed to complete:
+
+  - 5 minutes
+
+- **I spent about 3 hours on this assignment**.
