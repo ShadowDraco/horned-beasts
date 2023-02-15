@@ -31,7 +31,7 @@ class HornedBeast extends React.Component {
 					/>
 					<Card.Body>
 						<Card.Title>{this.props.beast.title}</Card.Title>
-						<div className='cardtext'>
+						<div className='card-text'>
 							<Card.Text>
 								{this.props.beast.description}
 								<br></br>

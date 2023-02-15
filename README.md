@@ -1,6 +1,8 @@
 # Showing off different animals with horns and some information about them
 
-# How Long?
+## Deployed on Netlify at [Fantastic Horned Beasts](https://fantastic-horned-beasts.netlify.app)
+
+### How Long Day 2?
 
 - Number and name of feature:
   - #1 Display images
@@ -54,22 +56,50 @@
 > because I was trying to make it fit in with my other interactions without having to
 > write more components and pass more props. In the end I think I found a good solution!!
 
-```
-I do have a question about how I could improve my method though, I ended up using a quick and possibly a dirty solution to my problem like this.
+```javascript
+//I do have a question about how I could improve my method though, I ended up using a quick and possibly a dirty solution to my problem like this.
 
-    filterBeasts = beasts => {
-		if (!this.state.filter) return this.props.beasts
-		let sorted = []
-		this.props.beasts.forEach(beast => {
-			sorted.push(beast)
-		})
-		return sorted.sort((a, b) => b.horns - a.horns)
-	}
+filterBeasts = beasts => {
+	if (!this.state.filter) return this.props.beasts
+	let sorted = []
+	this.props.beasts.forEach(beast => {
+		sorted.push(beast)
+	})
+	return sorted.sort((a, b) => b.horns - a.horns)
+}
 
- And I feel dumb for not being able to create an array equal to *this.props.beasts*
- without pointing to it and thus overwriting it. But I think my problem will be quickly solved by fixing that.
+//And I feel dumb for not being able to create an array equal to *this.props.beasts*
+//without pointing to it and thus overwriting it. But I think my problem will be quickly solved by fixing that.
 ```
 
 It felt really good to make the filters in css and js, and it was pretty fun to include the gallery 'theme' and card 'theme'!
 
-- I spent about 3 hours on this assignment.
+- **I spent about 3 hours on this assignment**.
+
+### How long Day 3
+
+- Number and name of feature:
+  - #1 Display modals
+- Estimate of time needed to complete:
+  - 20 minutes
+- Start time:
+  - 11:50
+- Finish time:
+  - 1:10
+- Actual time needed to complete:
+
+  - 1 hour 20 minutes
+
+- Number and name of feature:
+  - #2 Add search filter
+- Estimate of time needed to complete:
+  - 20 minutes
+- Start time:
+  - 1:10
+- Finish time:
+  - 1:50
+- Actual time needed to complete:
+
+  - 40 minutes
+
+- **I've spent about 6 hours on this assignment**.

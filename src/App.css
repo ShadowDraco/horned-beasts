@@ -16,7 +16,7 @@
 	padding-right: 0px;
 }
 
-.beastsdisplay {
+.beasts-display {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
@@ -28,12 +28,34 @@
 .beast {
 	min-width: 20%;
 	width: 25%;
-	height: 40%;
+
 	margin: 0.5em;
 	transition: 0.8s;
 }
 
 .beast:hover {
+	filter: brightness(0.8);
+}
+.beast-image {
+	min-width: 20%;
+	max-width: 25%;
+	margin: 0.1em;
+	transition: 0.8s;
+}
+
+.modal-body-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.beast-image img {
+	width: 100%;
+	height: 100%;
+}
+
+.beast-image:hover {
 	filter: brightness(0.8);
 }
 
@@ -71,11 +93,11 @@
 	opacity: 0;
 }
 
-.inteactionbuttons {
+.interaction-buttons {
 	margin-left: 3em;
 	display: flex;
 }
 
-.inteactionbuttons button {
+.interaction-buttons button {
 	margin: 1em;
 }
