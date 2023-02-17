@@ -15,6 +15,7 @@ class Main extends React.Component {
 
 		this.state = {
 			theme: true,
+			horns: 0,
 			ordered: false,
 			modalInfo: null,
 			searchFilter: '',
@@ -45,6 +46,16 @@ class Main extends React.Component {
 		this.setState({ ordered: !this.state.ordered })
 	}
 
+	changeHorns = num => {
+		this.setState({ horns: num })
+	}
+
+	filterByHorns = filteredBeasts => {
+		return this.state.horns !== 0
+			? filteredBeasts.filter(beast => beast.horns === this.state.horns)
+			: filteredBeasts
+	}
+
 	filterBeasts = () => {
 		let ordered = [...this.props.beasts]
 		let filtered = []
@@ -54,7 +65,7 @@ class Main extends React.Component {
 
 		filtered = ordered.filter(beast => beast.keyword.includes(sFilter))
 
-		return filtered
+		return this.filterByHorns(filtered)
 	}
 
 	changeSearchFilter = e => {
@@ -69,7 +80,10 @@ class Main extends React.Component {
 
 					{this.state.theme ? (
 						<>
-							<FilterForm setOrdered={this.setOrdered} />
+							<FilterForm
+								setOrdered={this.setOrdered}
+								changeHorns={this.changeHorns}
+							/>
 
 							<Form.Group className='w-50 flex-column'>
 								<Form.Label>Filter by name:</Form.Label>
